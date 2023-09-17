@@ -19,4 +19,29 @@ class FourLetterWordList {
             return allWords[randomNumber].uppercase()
         }
     }
+
+
+    object FourLetterSportsList {
+        // List of most common 4 letter words from: https://7esl.com/4-letter-words/
+        val fourLetterWords =
+            "Golf,Swim,Run,Bike,Jump,Kick,Race,Team,Shot,Ball,Pass,Dive,Surf,Lift,Hike"
+
+
+
+
+
+        // Returns a list of four letter words as a list
+        fun getAllFourLetterWords(): List<String> {
+            return fourLetterWords.split(",")
+        }
+
+        // Returns a random four letter word from the list in all caps
+        fun getRandomFourLetterWord(): String {
+            val allWords = getAllFourLetterWords()
+            val randomNumber = (0..allWords.size).shuffled().last()
+            return allWords[randomNumber].uppercase()
+        }
+    }
+
+
 }
