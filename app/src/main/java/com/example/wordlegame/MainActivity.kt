@@ -7,6 +7,7 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +19,43 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var wordToGuess = FourLetterWordList.FourLetterWordList.getRandomFourLetterWord()
-        val sportsToGuess = FourLetterWordList.FourLetterSportsList.getRandomFourLetterWord()
+        // enter button
+        val button = findViewById<Button>(R.id.button)
+        //reset button
+        val button2 = findViewById<Button>(R.id.reset)
+
+        val button3 = findViewById<Button>(R.id.sports)
+
+
+
+        val sportsbackground = findViewById<ImageView>(R.id.imageView2)
+
+        //first word
+        var word1 = findViewById<TextView>(R.id.word1text)
+        //check first word
+        var word1Guess = findViewById<TextView>(R.id.word1check)
+
+        //second word
+        var word2= findViewById<TextView>(R.id.word2text)
+        //check second word
+        var word2Guess = findViewById<TextView>(R.id.word2check)
+
+        //third word
+        var word3= findViewById<TextView>(R.id.word3text)
+        //check second word
+        var word3Guess = findViewById<TextView>(R.id.word3check)
+
+
+        var guessList= mutableListOf<String>()
+
+
+        var answer = findViewById<TextView>(R.id.guesshere)
+        answer.text= wordToGuess
+
+
+        var counter=0
+        val streak= findViewById<TextView>(R.id.counter)
+
         fun checkGuess(enterword: String) : String {
             var result = ""
             for (i in 0..3) {
@@ -44,36 +81,6 @@ class MainActivity : AppCompatActivity() {
                 window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
             }
         }
-
-       // enter button
-        val button = findViewById<Button>(R.id.button)
-        //reset button
-        val button2 = findViewById<Button>(R.id.button2)
-
-        //using edit text for user to input word
-       // var enterword = findViewById<EditText>(R.id.enterWord)
-
-        //first word
-        var word1 = findViewById<TextView>(R.id.word1text)
-        //check first word
-        var word1Guess = findViewById<TextView>(R.id.word1check)
-
-        //second word
-        var word2= findViewById<TextView>(R.id.word2text)
-        //check second word
-        var word2Guess = findViewById<TextView>(R.id.word2check)
-
-        //third word
-        var word3= findViewById<TextView>(R.id.word3text)
-        //check second word
-        var word3Guess = findViewById<TextView>(R.id.word3check)
-
-        var guessList= mutableListOf<String>()
-
-
-        var answer = findViewById<TextView>(R.id.guesshere)
-        answer.text= wordToGuess
-
 
         button.setOnClickListener {
            var enterword = findViewById<EditText>(R.id.enterWord)
@@ -115,7 +122,9 @@ class MainActivity : AppCompatActivity() {
                 word3Guess.text = checkGuess(guessList[2])
                 button.visibility = View.INVISIBLE
                 button2.visibility = View.VISIBLE
+                button3.visibility = View.VISIBLE
                 answer.visibility = View.VISIBLE
+
 
 
             }
@@ -132,9 +141,19 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
+        if(guessList.contains(wordToGuess)){
+            counter++
+            streak.text=counter.toString()
+        }
+        else{
+            counter=0
+        }
+
         button2.setOnClickListener {
             button2.visibility= View.INVISIBLE
             button.visibility= View.VISIBLE
+            button3.visibility= View.INVISIBLE
             guessList.clear()
             word1.setText("")
             word1Guess.setText("")
@@ -144,29 +163,30 @@ class MainActivity : AppCompatActivity() {
             word3Guess.setText("")
             wordToGuess = FourLetterWordList.FourLetterWordList.getRandomFourLetterWord()
             answer.text= wordToGuess
-            answer.visibility= View.INVISIBLE
+            sportsbackground.visibility= View.INVISIBLE
+            answer.visibility= View.VISIBLE
+
 
         }
 
+        button3.setOnClickListener {
+            wordToGuess = FourLetterWordList.FourLetterSportsList.getRandomFourLetterWord()
+            answer.text= wordToGuess
+            guessList.clear()
+            word1.setText("")
+            word1Guess.setText("")
+            word2.setText("")
+            word2Guess.setText("")
+            word3.setText("")
+            word3Guess.setText("")
+            button3.visibility= View.INVISIBLE
+            button2.visibility = View. INVISIBLE
+            button.visibility= View.VISIBLE
+            sportsbackground.visibility= View.VISIBLE
+            answer.visibility=View.INVISIBLE
 
 
-
-
-
-
-       // val wordToGuess = findViewById<TextView>(R.id.wordToGuess)
-
-
-        /**
-         * Parameters / Fields:
-         *   wordToGuess : String - the target word the user is trying to guess
-         *   guess : String - what the user entered as their guess
-         *
-         * Returns a String of 'O', '+', and 'X', where:
-         *   'O' represents the right letter in the right place
-         *   '+' represents the right letter in the wrong place
-         *   'X' represents a letter not in the target word
-         */
+        }
 
 
     }
