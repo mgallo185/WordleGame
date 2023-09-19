@@ -17,17 +17,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        var wordToGuess = FourLetterWordList.FourLetterWordList.getRandomFourLetterWord()
-        var sportToGuess = FourLetterWordList.FourLetterSportsList.getRandomFourLetterWord()
-        // enter button
         val button = findViewById<Button>(R.id.button)
         //reset button
         val button2 = findViewById<Button>(R.id.reset)
 
         val button3 = findViewById<Button>(R.id.sports)
-
-
 
         val sportsbackground = findViewById<ImageView>(R.id.imageView2)
 
@@ -46,13 +40,13 @@ class MainActivity : AppCompatActivity() {
         //check second word
         var word3Guess = findViewById<TextView>(R.id.word3check)
 
+        var wordToGuess = FourLetterWordList.FourLetterWordList.getRandomFourLetterWord()
+        var sportToGuess = FourLetterWordList.FourLetterSportsList.getRandomFourLetterWord()
 
         var guessList= mutableListOf<String>()
 
 
         var answer = findViewById<TextView>(R.id.guesshere)
-        answer.text= wordToGuess
-
 
         var counter=0
         val streak= findViewById<TextView>(R.id.counter)
@@ -87,7 +81,7 @@ class MainActivity : AppCompatActivity() {
            var enterword = findViewById<EditText>(R.id.enterWord)
             var word = enterword.getText().toString().uppercase()
             //Toast.makeText(this, word, Toast.LENGTH_SHORT).show()
-
+            answer.text= wordToGuess
 
            // if(word == ""){
             //    Toast.makeText(this, "please enter something", Toast.LENGTH_SHORT).show()
@@ -97,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "word needs to be 4 characters", Toast.LENGTH_SHORT).show()
 
             }
-            if(word.all{ it.isLetter()}){
+            if(word.all{ it.isLetter()} && word.length == 4){
 
                 guessList += word
 
@@ -191,7 +185,7 @@ class MainActivity : AppCompatActivity() {
             wordToGuess = FourLetterWordList.FourLetterWordList.getRandomFourLetterWord()
             answer.text= wordToGuess
             sportsbackground.visibility= View.INVISIBLE
-            answer.visibility= View.VISIBLE
+            answer.visibility= View.INVISIBLE
 
 
         }
