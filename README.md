@@ -44,7 +44,6 @@ GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows
 ## Notes
 
 Describe any challenges encountered while building the app.
-There's an error where if the user does not input anything in the edit text, the game crashes. Was not sure how to fix.
 I had trouble organizing the text boxes, but i then realized to have them all match the same height and width I would want.
 
 ## License
