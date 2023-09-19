@@ -8,26 +8,12 @@
     tools:context=".MainActivity"
     tools:visibility="invisible">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="96dp"
-        android:layout_height="92dp"
-        android:scaleType="centerCrop"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713"
-        app:srcCompat="@drawable/sports" />
-
     <TextView
         android:id="@+id/guess1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="76dp"
         android:text="Guess 1"
         android:textColor="#FD0000"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,20 +21,22 @@
 
     <TextView
         android:id="@+id/word1text"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="152dp"
+        android:layout_height="73dp"
 
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="52dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toEndOf="@+id/guess1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/guess1check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="Guess 1 Check"
         android:textColor="#FD0000"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,19 +44,21 @@
 
     <TextView
         android:id="@+id/word1check"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="153dp"
+        android:layout_height="70dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="60dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/guess1check"
         app:layout_constraintTop_toBottomOf="@+id/word1text" />
 
     <TextView
         android:id="@+id/guess2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="Guess 2"
         android:textColor="#FF0000"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,19 +66,21 @@
 
     <TextView
         android:id="@+id/word2text"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="144dp"
+        android:layout_height="71dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toEndOf="@+id/guess2"
         app:layout_constraintTop_toBottomOf="@+id/word1check" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="Guess 2 Check"
         android:textColor="#FF0000"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,19 +88,21 @@
 
     <TextView
         android:id="@+id/word2check"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="52dp"
+        android:layout_width="136dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/word2text" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="Guess 3"
         android:textColor="#FF0000"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,19 +110,21 @@
 
     <TextView
         android:id="@+id/word3text"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="52dp"
+        android:layout_width="130dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/word2check" />
 
     <TextView
         android:id="@+id/guess3check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="Guess 3 Check"
         android:textColor="#FF0000"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,41 +132,25 @@
 
     <TextView
         android:id="@+id/word3check"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="127dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="22dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/guess3check"
         app:layout_constraintTop_toBottomOf="@+id/word3text" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginBottom="689dp"
-        android:text="Wordle Clone"
-        android:textColor="#FF0000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/guesshere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="592dp"
         android:text="wordToGuess"
         android:textColor="#2196F3"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -180,7 +160,7 @@
         android:layout_height="76dp"
         android:layout_marginStart="157dp"
         android:layout_marginEnd="196dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:hint="Enter Word"
         android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -192,11 +172,11 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="32dp"
         android:text="Guess Word"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/enterWord" />
 
     <Button
@@ -205,12 +185,12 @@
         android:layout_height="64dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="24dp"
         android:text="Reset"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/enterWord"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -226,20 +206,34 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="32dp"
         android:text="Streak: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="88dp"
+        android:layout_height="65dp"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867"
+        app:srcCompat="@drawable/sports" />
+
     <TextView
         android:id="@+id/counter"
-        android:layout_width="26dp"
-        android:layout_height="10dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:text="0"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />

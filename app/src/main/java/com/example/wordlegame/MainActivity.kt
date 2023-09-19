@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var wordToGuess = FourLetterWordList.FourLetterWordList.getRandomFourLetterWord()
+        var sportToGuess = FourLetterWordList.FourLetterSportsList.getRandomFourLetterWord()
         // enter button
         val button = findViewById<Button>(R.id.button)
         //reset button
@@ -111,10 +112,30 @@ class MainActivity : AppCompatActivity() {
                 word1.text= guessList[0]
                 word1Guess.text = checkGuess(guessList[0])
 
+                if(word==answer.text){
+                    Toast.makeText(this, "you win", Toast.LENGTH_SHORT).show()
+                    button.visibility = View.INVISIBLE
+                    button2.visibility = View.VISIBLE
+                    button3.visibility = View.VISIBLE
+                    answer.visibility = View.VISIBLE
+                    counter++
+                    streak.text=counter.toString()
+                }
+
             }
             if (guessList.size==2){
                 word2.text= guessList[1]
                 word2Guess.text = checkGuess(guessList[1])
+
+                if(word==answer.text){
+                    Toast.makeText(this, "you win", Toast.LENGTH_SHORT).show()
+                    button.visibility = View.INVISIBLE
+                    button2.visibility = View.VISIBLE
+                    button3.visibility = View.VISIBLE
+                    answer.visibility = View.VISIBLE
+                    counter++
+                    streak.text=counter.toString()
+                }
 
             }
             if (guessList.size==3){
@@ -124,6 +145,19 @@ class MainActivity : AppCompatActivity() {
                 button2.visibility = View.VISIBLE
                 button3.visibility = View.VISIBLE
                 answer.visibility = View.VISIBLE
+
+                if(word==answer.text){
+                    counter++
+                    streak.text=counter.toString()
+                }
+                else{
+                    counter=0
+                    streak.text=counter.toString()
+                }
+
+
+
+
 
 
 
@@ -142,13 +176,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        if(guessList.contains(wordToGuess)){
-            counter++
-            streak.text=counter.toString()
-        }
-        else{
-            counter=0
-        }
 
         button2.setOnClickListener {
             button2.visibility= View.INVISIBLE
